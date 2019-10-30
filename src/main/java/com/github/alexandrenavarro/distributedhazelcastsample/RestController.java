@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class RestController {
 
-    private final DataRepository dataRepository;
+    private final DataService dataService;
 
     @GetMapping("/api/{id}")
     public Data getData(@PathVariable("id") String a) {
-        return  dataRepository.getData(a);
+        return  dataService.getData(a);
     }
 
     @PutMapping("/api/{id}")
     public Data saveData(@PathVariable("id") String a, @RequestBody Data data) {
-        return dataRepository.saveData(data);
+        return dataService.saveData(data);
     }
 
 }

@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @CacheConfig(cacheNames = "instruments")
-public class DataRepository {
+public class DataService {
 
-    @Cacheable()
+    @Cacheable
     public Data getData(String i) {
         log.info("DataRepository.getData");
         return Data.builder()
